@@ -67,8 +67,27 @@ def main():
 
     train_x, train_y = preprocss(train_data, MAX_SENTENCE_LEN)
     test_x, test_y = preprocss(eval_data, MAX_SENTENCE_LEN)
-    print(test_x)
-    print(test_y)
+    # print(test_x)
+    # print(test_y)
+
+    EPOCHS = config["epochs"]
+    BATCH_SIZE = config["batch_size"]
+    EMBED_DIM = config["embedding_dim"]
+    USE_ATTENTION_LAYER = config.get("use_attention_layer", False)
+    BiLSTM_STACK_CONFIG = config.get("bilstm_stack_config", [])
+    BATCH_NORMALIZATION_AFTER_EMBEDDING_CONFIG = config.get(
+        "use_batch_normalization_after_embedding", False
+    )
+    BATCH_NORMALIZATION_AFTER_BILSTM_CONFIG = config.get(
+        "use_batch_normalization_after_bilstm", False
+    )
+    CRF_PARAMS = config.get("crf_params", {})
+    OPTIMIZER_PARAMS = config.get("optimizer_params_keras", {})
+
+    vacab_size = vocabulary_lookuper.size()
+    tag_size = tag_lookuper.size()
+
+
 
 
 if __name__ == "__main__":
