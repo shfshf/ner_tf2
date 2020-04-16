@@ -15,7 +15,7 @@ warm_start_dir:
 # "/Users/shf/PycharmProjects/ner_s2s/results0/model_dir/BilstmCrfModel-64-0.001-None-15000"
 
 # model configure
-batch_size: 64
+batch_size: 32
 epochs: 1
 dropout: 0.5
 intent_field: label
