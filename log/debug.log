@@ -1,4 +1,0 @@
-[-INFO-] 2020-05-06 17:22:07,505 59573  train.<module> line:15  building vocab file
-[-INFO-] 2020-05-06 17:22:09,936 59573  train.<module> line:29  hidden_num:512, vocab_size:4733, label_size:14
-[-INFO-] 2020-05-06 18:33:15,032 60227  train.<module> line:18  vocab file exits!!
-[-INFO-] 2020-05-06 18:38:13,786 60272  train.<module> line:18  vocab file exits!!

@@ -28,8 +28,8 @@ def build_vocab(corpus_file_list, vocab_file, tag_file):
                 # raise e
 
     if not os.path.exists(vocab_file):
-        with open(vocab_file,"w") as f:
-            for index,word in enumerate(["<UKN>"]+list(words) ):
+        with open(vocab_file, "w") as f:
+            for index, word in enumerate(["<UKN>"]+list(words) ):
                 f.write(word+"\n")
 
     tag_sort = {
@@ -43,8 +43,8 @@ def build_vocab(corpus_file_list, vocab_file, tag_file):
            key=lambda x: (len(x.split("-")), x.split("-")[-1], tag_sort.get(x.split("-")[0], 100))
            )
     if not os.path.exists(tag_file):
-        with open(tag_file,"w") as f:
-            for index,tag in enumerate(["<UKN>"]+tags):
+        with open(tag_file, "w") as f:
+            for index, tag in enumerate(["<UKN>"]+tags):
                 f.write(tag+"\n")
 
 # build_vocab(["./data/train.utf8","./data/test.utf8"])
@@ -69,7 +69,7 @@ def tokenize(filename, vocab2id, tag2id):
     with open(filename, 'r', encoding='utf-8') as fr:
         for line in [elem.strip() for elem in fr.readlines()][:500000]:
             try:
-                if line != "end":
+                if len(line) != 0:
                     w, t = line.split()
                     content.append(vocab2id.get(w, 0))
                     label.append(tag2id.get(t, 0))
